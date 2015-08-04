@@ -178,7 +178,7 @@ public enum ServerTrustPolicy {
                 serverTrustIsValid = trustIsValid(serverTrust)
             } else {
                 let serverCertificatesDataArray = certificateDataForTrust(serverTrust)
-                let pinnedCertificatesDataArray = certificateDataForCertificates(pinnedCertificates)
+                let pinnedCertificatesDataArray = certificateDataForCertificates([] + pinnedCertificates)
 
                 outerLoop: for serverCertificateData in serverCertificatesDataArray {
                     for pinnedCertificateData in pinnedCertificatesDataArray {
